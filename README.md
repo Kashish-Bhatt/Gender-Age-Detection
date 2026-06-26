@@ -25,23 +25,15 @@ The system captures a live webcam feed, detects faces, and predicts the age and 
 - NumPy (data handling and preprocessing)
 - Jupyter Notebook (training, retraining, and prediction workflows)
 
-## 🚀 How to Run
+## ⚙️ How It Works
 
-1. Clone the repository
-
-git clone https://github.com/Kashish-Bhatt/Age-Gender-Detection-CNN.git
-
-2. Install dependencies
-
-pip install opencv-python numpy tensorflow
-
-3. To run prediction using the pre-trained model
-
-jupyter notebook webcam_predict.ipynb
-
-4. To retrain the model from scratch (optional)
-
-jupyter notebook train_model.ipynb
+1. Load and preprocess the UTKFace dataset (face images labeled with age and gender)
+2. Train a CNN model to learn facial features correlated with age and gender
+3. Save the trained model (age_gender_model.h5)
+4. Capture a live webcam feed using OpenCV
+5. Detect faces in each frame
+6. Pass each detected face through the trained model
+7. Display the predicted age and gender on the live video feed
 
 ## 📊 Model Pipeline
 
@@ -50,6 +42,10 @@ Webcam Frame → Face Detection → Preprocessing → CNN Model → Age & Gender
 The CNN takes a cropped, resized face image as input and outputs two predictions:
 - Age: estimated as a numeric value
 - Gender: classified as male/female
+
+## 📈 Current Status
+
+Gender prediction is currently accurate and performs well in real-time testing. Age prediction, however, is less accurate and needs further improvement — this is the main area of ongoing work on the project.
 
 ## 📁 Project Structure
 
@@ -74,7 +70,7 @@ git clone https://github.com/Kashish-Bhatt/Age-Gender-Detection-CNN.git
 
 2. Install dependencies
 
-pip install tensorflow opencv-python numpy
+pip install opencv-python numpy tensorflow
 
 3. To run prediction using the pre-trained model
 
@@ -86,6 +82,6 @@ jupyter notebook train_model.ipynb
 
 ## 🔮 Future Improvements
 
-- Improve age prediction accuracy with a larger, more diverse dataset
+- Improve age prediction accuracy — currently the weaker part of the model, likely needs a deeper network, more age-balanced training data, or a different loss function for the age output
 - Add emotion detection alongside age and gender
 - Deploy as a web app using Flask or Streamlit
