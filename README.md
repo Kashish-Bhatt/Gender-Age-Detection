@@ -25,15 +25,23 @@ The system captures a live webcam feed, detects faces, and predicts the age and 
 - NumPy (data handling and preprocessing)
 - Jupyter Notebook (training, retraining, and prediction workflows)
 
-## ⚙️ How It Works
+## 🚀 How to Run
 
-1. Load and preprocess the UTKFace dataset (face images labeled with age and gender)
-2. Train a CNN model to learn facial features correlated with age and gender
-3. Save the trained model (age_gender_model.h5)
-4. Capture a live webcam feed using OpenCV
-5. Detect faces in each frame
-6. Pass each detected face through the trained model
-7. Display the predicted age and gender on the live video feed
+1. Clone the repository
+
+git clone https://github.com/Kashish-Bhatt/Age-Gender-Detection-CNN.git
+
+2. Install dependencies
+
+pip install opencv-python numpy tensorflow
+
+3. To run prediction using the pre-trained model
+
+jupyter notebook webcam_predict.ipynb
+
+4. To retrain the model from scratch (optional)
+
+jupyter notebook train_model.ipynb
 
 ## 📊 Model Pipeline
 
